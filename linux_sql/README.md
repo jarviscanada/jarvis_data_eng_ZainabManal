@@ -1,4 +1,4 @@
-nux Cluster Monitoring Agent 
+# Linux Cluster Monitoring Agent 
 
 The Linux Cluster Monitoring Agent is a tool aimed at preserving and monitoring real-time data  from nodes running on CentOS. This application collects data in the form of host hardware usage and specification and uses a Data Definition Language (DDL) SQL script to organise and store the specified data into tables within a relational database. This project is designed for users with clusters of machines in their projects, providing real-time insights into resource usage, which can be later used to generate reports and aid in future resource planning decisions.
 
@@ -70,8 +70,24 @@ This script automates both monitoring usage data and the insertion of that data 
 
 ## Database Modelling
 - host_info
+Id			SERIAL		Database ID
+Hostname		VARCHAR		Name of host machine
+cpu_number		INT		Number of CPUs
+cpu_architecture	VARCHAR		CPU architecture
+cpu_model		VARCHAR		Model name of cpu
+cpu_mhz			FLOAT		Clock speed of CPU (in MHz)
+t2_cache		INT		Size of L2 cache (in kB)
+total_mem		INT		Total memory (in kB)
+timestamp		TIMESTAMP	Time at which data was collected
 
 - host_usage
+host_id			SERIAL		ID of the host within the database
+memory_free		INT		Amount of free memory in MB
+cpu_idle		INT		Amount of time CPU spent idle (as %)
+cpu_kernel		INT		Amount of time CPU spent using kernel (as %)
+disk_io			INT		Number of disk I/O
+disk_available		INT		Amount of available disk space (in MB)
+timestamp		TIMESTAMP	Time at which data was collected
 
 # Test
 The bash scripts were manually tested. The Postgres instance alongside the two shell scripts, host_info.sh and host_info.sh, were tested manually on a remote desktop on the Google Cloud Platform.
