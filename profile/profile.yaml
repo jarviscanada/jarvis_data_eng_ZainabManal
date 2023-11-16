@@ -68,7 +68,7 @@ highlighted_projects:
     #project name
   - name: "In-Room Student Localization System"
     #URL is optional
-    git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
+    #git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description:  The In-Room Student Localization System is a student identification system created for university classrooms, utilising Bluetooth signals emitted from laptops. The scope of the project encompasses signal reception, identification, and the determination of student locations. The application received and identified unique Bluetooth signals and then determined the location of students associated with a specific signal.
 
