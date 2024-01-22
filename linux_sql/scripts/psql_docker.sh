@@ -5,8 +5,7 @@ cmd=$1
 db_username=$2
 db_password=$3
 
-# Start Docker 
-# Make sure you understand the double pipe operator
+# Start Docker (use double pipe operator)
 sudo systemctl status docker || sudo systemctl start docker
 
 # Check container status (try the following cmds on the terminal)
@@ -15,7 +14,7 @@ container_status=$?
 
 # User switch case to handle create|stop|start options
 case $cmd in
-create)
+	create)
 
   # Check if the container is already created
   if [ $container_status -eq 0 ]; then
@@ -25,15 +24,15 @@ create)
 
   # Check the number of CLI arguments
   if [ $# -ne 3 ]; then
-    echo 'Create requires username and password'
-    exit 1
+	echo 'Create requires username and password'
+	exit 1
   fi
-
+   
   # Create container 
-  docker volume #todo
+  docker volume create pgdata
 
   # Start the container
-  docker run #todo
+  docker run --name jrvs-psql -e POSTGRESPASSWORD=$db_password -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
 
   # Ensure you understand what `$?` represents
   exit $?
