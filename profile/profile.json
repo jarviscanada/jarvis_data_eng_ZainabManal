@@ -28,6 +28,11 @@
       "description": "Implemented a Linux Cluster Monitoring Agent tool on a remote CentOS machine using technologies such as Docker, GitHub, PostgreSQL, and Crontab. The tool was used to collect and monitor real-time hardware specifications and CPU memory usage from the host machine and store the data within a Postgres database. The project is designed for users with clusters of machines in their projects, providing real-time insights into resource usage. Testing was done manually and each script was tested to ensure that it adhered to specifications and collected the required data.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
+    },
+    {
+      "description": "Developed a grep application that employs two methods for pattern searching within files in a directory. For moderate-sized datasets, file I/O and looping were utilized to reliably find patterns in files. Lambda and Stream APIs were used to analyze large datasets and manage files larger than the system's physical memory. Maven was employed to build and package the application, and Docker Hub was utilized to simplify deployment across various environments.",
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
     }
   ],
   "name": "Zainab Manal",
