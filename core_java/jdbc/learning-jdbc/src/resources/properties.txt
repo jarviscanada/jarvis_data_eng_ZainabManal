@@ -1,0 +1,7 @@
+db-class:org.postgresql.Driver
+server:localhost
+database:host_agent
+port:5432
+username:postgres
+password:password
+api-key:6adb62f13cmshe99279fab639d71p129e6bjsn61cf973eb184

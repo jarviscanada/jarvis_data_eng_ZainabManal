@@ -5,8 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/grep/pom.xml" />
+        <option value="$PROJECT_DIR$/jdbc/learning-jdbc/pom.xml" />
       </list>
     </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
