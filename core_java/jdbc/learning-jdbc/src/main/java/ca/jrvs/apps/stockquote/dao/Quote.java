@@ -8,8 +8,8 @@ import javax.xml.crypto.Data;
 
 public class Quote {
 
-    @JsonProperty("01. ticker")
-    private String ticker;
+    @JsonProperty("01. symbol")
+    private String symbol;
     @JsonProperty("02. open")
     private double open;
     @JsonProperty("03. high")
@@ -33,12 +33,12 @@ public class Quote {
 
     // Constructors, getters, and setters
 
-    public String getTicker() {
-        return ticker;
+    public String getSymbol() {
+        return symbol;
     }
 
-    public void setTicker(String ticker) {
-        this.ticker = ticker;
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 
     public double getOpen() {
@@ -120,4 +120,22 @@ public class Quote {
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
+
+    @Override
+    public String toString() {
+        return "Quote{" +
+                "symbol='" + symbol + '\'' +
+                ", open=" + open +
+                ", high=" + high +
+                ", low=" + low +
+                ", price=" + price +
+                ", volume=" + volume +
+                ", latestTradingDay=" + latestTradingDay +
+                ", previousClose=" + previousClose +
+                ", change=" + change +
+                ", changePercent='" + changePercent + '\'' +
+                ", timestamp=" + timestamp +
+                '}';
+    }
 }
+

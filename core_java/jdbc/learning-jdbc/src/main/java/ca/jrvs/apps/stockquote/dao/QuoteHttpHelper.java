@@ -1,14 +1,20 @@
 package ca.jrvs.apps.stockquote.dao;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 public class QuoteHttpHelper {
-
-    private String apiKey = "6adb62f13cmshe99279fab639d71p129e6bjsn61cf973eb184";
+    final Logger logger = LoggerFactory.getLogger(QuoteHttpHelper.class);
+    private String apiKey;
     private OkHttpClient client;
 
     public QuoteHttpHelper(String apiKey, OkHttpClient client) {
@@ -24,9 +30,9 @@ public class QuoteHttpHelper {
      * @throws IllegalArgumentException if no data was found for the given symbol
      */
     public Quote fetchQuoteInfo(String symbol) throws IllegalArgumentException {
+        Quote quote = new Quote();
         // Build the Alpha Vantage API URL
         String apiUrl = "https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=" + symbol + "&datatype=json";
-
 
         Request request = new Request.Builder()
                 .url(apiUrl)
@@ -37,7 +43,7 @@ public class QuoteHttpHelper {
 
         try (Response response = client.newCall(request).execute()) {
             if (!response.isSuccessful()) {
-                throw new IllegalArgumentException("Failed to fetch data. HTTP status code: " + response.code());
+                logger.info("Failed to fetch data. HTTP status code:" + response.code());
             }
 
             // Parse JSON response using Jackson
@@ -50,15 +56,20 @@ public class QuoteHttpHelper {
             if (jsonNode.has("Global Quote")) {
                 return objectMapper.treeToValue(jsonNode.get("Global Quote"), Quote.class);
             } else {
-                throw new IllegalArgumentException("No data found for symbol: " + symbol);
+                logger.info("No data found for symbol: " + symbol);
             }
 
-        }catch(Exception e) {
-        e.printStackTrace();
-        throw new IllegalArgumentException("Error fetching data for symbol: " + symbol, e);
-    }
+        } catch (JsonMappingException e) {
+            logger.error("Could not parse data into JSON.");
+        } catch (JsonProcessingException e) {
+            logger.error("Could not process data into JSON.");
+        } catch (IOException e) {
+            logger.error("Could not parse data properly. IOException");
+        }
 
-}
+        if(quote.getSymbol() == null) return null;
+        else return quote;
+  }
 }
 
 

@@ -13,8 +13,8 @@ public class QuoteDao implements CrudDao<Quote, String> {
     final Logger logger = LoggerFactory.getLogger(CrudDao.class);
     private Connection c;
 
-    public QuoteDao(Connection connection) {
-        super();
+    public QuoteDao(Connection c) {
+        this.c = c;
     }
 
     @Override
@@ -23,11 +23,11 @@ public class QuoteDao implements CrudDao<Quote, String> {
             logger.error("Quote does not exist");
         }
 
-        else if (findById(entity.getTicker()).isEmpty()) {
+        else if (findById(entity.getSymbol()).isEmpty()) {
             String sqlQuery = "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, previous_close, change, change_percent, timestamp) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement preparedStatement = c.prepareStatement(sqlQuery)) {
-                preparedStatement.setString(1, entity.getTicker());
+                preparedStatement.setString(1, entity.getSymbol());
                 preparedStatement.setDouble(2, entity.getOpen());
                 preparedStatement.setDouble(3, entity.getHigh());
                 preparedStatement.setDouble(4, entity.getLow());
@@ -45,13 +45,12 @@ public class QuoteDao implements CrudDao<Quote, String> {
 
             } catch (SQLException e) {
                 logger.error("SQLException Occurred. Could not save quote. Reason:" + e.getMessage());
-                // Handle or log the exception as needed, and maybe throw a different type of exception
             }
         } else {
             String sqlQuery = "UPDATE quote SET symbol = ?, open = ?, high = ?, low = ?, price = ?, volume = ?, " +
                     "latest_trading_day = ?, previous_close = ?, change = ?, change_percent = ?, timestamp = ? WHERE symbol = ?";
             try (PreparedStatement preparedStatement = c.prepareStatement(sqlQuery)) {
-                preparedStatement.setString(1, entity.getTicker());
+                preparedStatement.setString(1, entity.getSymbol());
                 preparedStatement.setDouble(2, entity.getOpen());
                 preparedStatement.setDouble(3, entity.getHigh());
                 preparedStatement.setDouble(4, entity.getLow());
@@ -62,14 +61,13 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 preparedStatement.setDouble(9, entity.getChange());
                 preparedStatement.setString(10, entity.getChangePercent());
                 preparedStatement.setTimestamp(11, entity.getTimestamp());
-                preparedStatement.setString(12, entity.getTicker());
+                preparedStatement.setString(12, entity.getSymbol());
 
                 preparedStatement.executeUpdate();
 
                 return entity;
             } catch (SQLException e) {
-                logger.error("SQLException Occurred. Could not save quote. Reason:" + e.getMessage());
-                // Handle or log the exception as needed, and maybe throw a different type of exception
+                logger.error("SQLException Occurred. Could not save quote:" + e.getMessage());
             }
         }
         return entity;
@@ -96,7 +94,6 @@ public class QuoteDao implements CrudDao<Quote, String> {
             logger.error("SQLException Occurred. Could not find quote. Reason:" + e.getMessage());
             return Optional.empty();
         }
-        //return Optional.empty();
     }
 
     @Override
@@ -142,7 +139,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
     // Helper method to map ResultSet to Quote entity
     private Quote mapToQuote(ResultSet resultSet) throws SQLException {
         Quote quote = new Quote();
-        quote.setTicker(resultSet.getString("symbol"));
+        quote.setSymbol(resultSet.getString("symbol"));
         quote.setOpen(resultSet.getDouble("open"));
         quote.setHigh(resultSet.getDouble("high"));
         quote.setLow(resultSet.getDouble("low"));
@@ -155,21 +152,5 @@ public class QuoteDao implements CrudDao<Quote, String> {
         quote.setTimestamp(resultSet.getTimestamp("timestamp"));
         return quote;
     }
-}
 
-//    // Helper method to set parameters for the PreparedStatement
-//    private void setQuoteParameters(PreparedStatement statement, Quote quote) throws SQLException {
-//        statement.setString(1, quote.getTicker());
-//        statement.setDouble(2, quote.getOpen());
-//        statement.setDouble(3, quote.getHigh());
-//        statement.setDouble(4, quote.getLow());
-//        statement.setDouble(5, quote.getPrice());
-//        statement.setInt(6, quote.getVolume());
-//        statement.setDate(7, quote.getLatestTradingDay());
-//        statement.setDouble(8, quote.getPreviousClose());
-//        statement.setDouble(9, quote.getChange());
-//        statement.setString(10, quote.getChangePercent());
-//        statement.setTimestamp(11, quote.getTimestamp());
-//    }
-//
-//}
+}

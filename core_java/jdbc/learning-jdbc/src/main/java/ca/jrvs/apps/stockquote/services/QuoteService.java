@@ -24,4 +24,24 @@ public class QuoteService {
         quoteOptional.ifPresent(quote -> dao.save(quote));
         return quoteOptional;
     }
+
+    public void save(Quote quote) {
+        dao.save(quote);
+    }
+
+    public Optional<Quote> find(String symbol) {
+        return dao.findById(symbol);
+    }
+
+    public void delete(String symbol) {
+        dao.deleteById(symbol);
+    }
+
+    public Iterable<Quote> findAll() {
+        return dao.findAll();
+    }
+
+    public void deleteAll() {
+        dao.deleteAll();
+    }
 }
