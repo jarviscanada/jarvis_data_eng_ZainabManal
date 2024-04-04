@@ -24,6 +24,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_ZainabMana
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_ZainabManal/tree/master/springboot)]: Developed a trading application using the Springboot framework. The application allowed users to stimulate buying and selling stocks, as well as manage accounts, quotes, and retrieve stock information from IEX Cloud. The application was implemented using Core Java and Springboot for dependency management. The IEX Cloud API was used to fetch latest stock information and PostgreSQL was used to define database schemas. Maven was used to managed Java dependencies and testing was done with JUnit 4.
 
+**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_ZainabManal/tree/master/python_data_anlytics)]: Analyzed the shopping behavior of a company's customers to help their team develop targeted marketing campaigns. Python and Jupyter notebook were utilized for the analyses, alongside the Pandas, Matplotlib, and NumPy libraries.
+
 
 ## Highlighted Projects
 **In-Room Student Localization System**: Conceptualized and developed a student identification system for university classrooms, utilising Bluetooth signals emitted from laptops. The scope of the project encompassed signal reception, identification, and the determination of student locations. The application received and identified unique Bluetooth signals and then determined the location of students associated with a specific signal.

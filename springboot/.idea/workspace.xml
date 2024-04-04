@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0172387f-f1a8-41b6-91a7-fa51cbbdb4ed" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/StockQuoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/StockQuoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/dao/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/dao/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/dao/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/dao/Quote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/dao/QuoteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/dao/QuoteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/dao/QuoteHttpHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/dao/QuoteHttpHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/services/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/services/PositionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/services/QuoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/main/java/ca/jrvs/apps/stockquote/services/QuoteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/resources/properties.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/resources/properties.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/test/java/ca/jrvs/apps/stockquote/QuoteHttpHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../core_java/jdbc/learning-jdbc/src/test/java/ca/jrvs/apps/stockquote/QuoteHttpHelperTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2cxeZRCoyUmTk7A5DvlDzvbZYsl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/iexQuoteMarketData",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_392-corretto-1.8.0_392-f644763e9732-5759c461" />
+        <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-a9dfd5e7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0172387f-f1a8-41b6-91a7-fa51cbbdb4ed" name="Changes" comment="" />
+      <created>1709057717881</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709057717881</updated>
+      <workItem from="1709057719276" duration="981000" />
+      <workItem from="1709065507768" duration="1430000" />
+      <workItem from="1709069140203" duration="52000" />
+      <workItem from="1709069261572" duration="12000" />
+      <workItem from="1709069320384" duration="738000" />
+      <workItem from="1711984697209" duration="38000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
